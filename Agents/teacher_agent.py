@@ -1,29 +1,21 @@
+from Prompt.prompt_router import PROMPTS
+from llms.gemini import llm
 from langchain_core.output_parsers import StrOutputParser
-from Prompt.Teacher_prompt import teacher_prompt
-from llms.gemini import llm 
-
 
 parser = StrOutputParser()
 
+def teacher_agent(goal, mode, level, language, query):
 
-chain = teacher_prompt | llm | parser
+    prompt = PROMPTS.get(mode.lower())
 
+    if prompt is None:
+        raise ValueError(f"Unsupported mode: {mode}")
 
-def teacher_agent(
-    goal,
-    mode,
-    level,
-    language,
-    query
-):
-    return chain.invoke(
-        {
-            "goal": goal,
-            "mode": mode,
-            "level": level,
-            "language": language,
-            "query": query
-        }
-    )
+    chain = prompt | llm | parser
 
-
+    return chain.invoke({
+        "goal": goal,
+        "level": level,
+        "language": language,
+        "query": query
+    })
