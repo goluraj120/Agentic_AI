@@ -1,13 +1,11 @@
 from Agents.teacher_agent import teacher_agent
 
 response = teacher_agent(
-    goal=input("Enetr your gole(like- Become AI Engineer) :"),
-    mode=input("choose the mode(like- learning , interview , notes) :"),
-    level=input("choose your level :"),
-    language= input("choose your language(hindi , english) :"),
-    query=input("Enter your query :")
+    goal=input("Goal: "),
+    mode=input("Mode (learning/notes/interview/compare/coding): "),
+    level=input("Level: "),
+    language=input("Language: "),
+    query=input("Question: ")
 )
 
 print(response)
-
-
