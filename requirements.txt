@@ -1,0 +1,40 @@
+# LangChain Core 
+langchain 
+langchain-core
+
+
+# Google Gemini (PaLM) Integration 
+langchain-google-genai 
+google-generativeai
+
+# Hugging Face Integration 
+langchain-huggingface 
+transformers
+huggingface-hub
+
+# Environment Variable Management 
+python-dotenv
+
+# Machine Learning Utilities 
+numpy
+scikit-learn
+
+#groq ai
+langchain-groq
+
+#UI
+streamlit
+
+#data validation
+pydantic
+
+
+#for graph showing
+grandalf
+
+# document loader
+langchain-community
+PyPDF
+beautifulsoup4
+lxml
+
