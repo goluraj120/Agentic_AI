@@ -9,16 +9,11 @@ goal = st.text_input("Goal")
 mode = st.selectbox(
     "Mode",
     [
-        
-    "learning",
-    "quiz",
-    "interview",
-    "resume",
-    "roadmap",
-    "notes",
-    "compare",
-    "coding"
-
+        "Learning",
+        "Interview",
+        "Notes",
+        "Compare",
+        "Coding"
     ]
 )
 
