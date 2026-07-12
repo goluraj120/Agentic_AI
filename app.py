@@ -1,11 +1,2 @@
-from Agents.teacher_agent import teacher_agent
+import UI 
 
-response = teacher_agent(
-    goal=input("Goal: "),
-    mode=input("Mode (learning/notes/interview/compare/coding): "),
-    level=input("Level: "),
-    language=input("Language: "),
-    query=input("Question: ")
-)
-
-print(response)
