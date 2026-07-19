@@ -43,9 +43,51 @@ The Teacher Agent provides personalized learning based on the user's goal, knowl
 
 ---
 
+## ✅ Quiz Agent (Completed)
+
+The Quiz Agent generates personalized quizzes based on the user's learning goal, topic, knowledge level, and preferred language. It helps users evaluate their understanding through interactive multiple-choice questions.
+
+### 📝 Features
+
+* 🎯 Personalized Quiz Generation
+
+  * Topic-based quizzes
+  * Goal-oriented questions
+  * Difficulty-based question selection
+  * Language support
+
+* ❓ Multiple Choice Questions (MCQs)
+
+  * 10 automatically generated questions
+  * Four options (A, B, C, D)
+  * One correct answer
+  * Concept-based questions
+
+* 📊 Quiz Evaluation
+
+  * Automatic score calculation
+  * Marks for each question
+  * Final score summary
+  * Performance feedback
+
+* 💡 Answer Explanation
+
+  * Correct answer after submission
+  * Short explanation for every question
+  * Helps reinforce learning
+
+* 🧠 Structured Output
+
+  * Pydantic schema validation
+  * Reliable structured quiz generation
+  * Consistent output format
+  * Easy integration with Streamlit UI
+
+---
+
+
 # 🚀 Upcoming Agents
 
-- 🎯 Quiz Agent
 - 🛣️ Roadmap Agent
 - 📄 Resume Review Agent
 - 📅 Study Planner Agent
@@ -77,19 +119,25 @@ The Teacher Agent provides personalized learning based on the user's goal, knowl
 AI_Learning_Assistant/
 │
 ├── app.py
-├── UI.py
-│
+├── UI/
+│   ├──Quiz_ui.py
+|   └──Teacher_ui.py
+|
 ├── Agents/
-│   └── teacher_agent.py
-│
+│   ├── teacher_agent.py
+│   └── quiz_agent.py
+|
 ├── Prompt/
-│   ├── prompt_router.py
-│   ├── learning_prompt.py
-│   ├── notes_prompt.py
-│   ├── interview_prompt.py
-│   ├── compare_prompt.py
-│   └── coding_prompt.py
-│
+|   └── Teacher_prompt/ 
+│     ├── prompt_router.py
+│     ├── learning_prompt.py
+│     ├── notes_prompt.py
+│     ├── interview_prompt.py
+│     ├── compare_prompt.py
+│     └── coding_prompt.py
+│   └── Quiz_prompt.py
+|   └── prompt_router.py
+|
 ├── llms/
 │   └── gemini.py
 │
@@ -159,19 +207,19 @@ streamlit run app.py
 # 🧩 Current Workflow
 
 ```text
-                  User
-                    │
-                    ▼
-              Streamlit UI
-                    │
-                    ▼
-              Teacher Agent
-                    │
-                    ▼
-             Prompt Router
-                    │
-      ┌─────────────┼─────────────┐
-      ▼             ▼             ▼
+                            User
+                             │
+                             ▼
+                        Streamlit UI
+                 ┌─────────────┼─────────────┐
+                 ▼                           ▼
+              Teacher Agent              Quiz_Agent
+                    │                         │
+                    ▼                         ▼ 
+             Prompt Router               Gemini 2.5 Flash
+                    │                           │
+      ┌─────────────┼─────────────┐             ▼
+      ▼             ▼             ▼      Personalized Response
  Learning      Interview      Notes
       │
       ▼
@@ -179,7 +227,11 @@ streamlit run app.py
       │
       ▼
  Personalized Response
-```
+```                          
+                                            
+                                                 
+                                         
+                   
 
 ---
 
@@ -215,7 +267,7 @@ Question  : Explain LangGraph.
 - [x] Teacher Agent
 - [x] Prompt Router
 - [x] Multiple Learning Modes
-- [ ] Quiz Agent
+- [x] Quiz Agent
 - [ ] Roadmap Generator
 - [ ] Resume Review Agent
 - [ ] Study Planner
