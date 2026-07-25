@@ -38,3 +38,9 @@ PyPDF
 beautifulsoup4
 lxml
 
+# YouTube transcript retrieval
+youtube-transcript-api
+#for vector store 
+langchain_chrona
+chroma
+
