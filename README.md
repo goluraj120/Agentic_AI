@@ -1,6 +1,6 @@
 # 🎓 AI Learning Assistant
 
-An AI-powered multi-agent learning platform built with **LangChain**, **Google Gemini**, and **Streamlit** to provide personalized educational assistance. The project helps students learn technical concepts, prepare for interviews, generate notes, compare technologies, solve coding problems, and much more.
+An AI-powered multi-agent learning platform built with **LangChain**, **Google Gemini**,**groq** and **Streamlit** to provide personalized educational assistance. The project helps students learn technical concepts, prepare for interviews, generate notes, compare technologies, solve coding problems, and much more.
 
 > 🚧 This project is actively under development. New AI agents and learning features are being added continuously.
 
@@ -86,6 +86,34 @@ The Quiz Agent generates personalized quizzes based on the user's learning goal,
 ---
 
 
+## ✅ YouTube Chatbot Agent (Completed)
+
+The YouTube Chatbot Agent allows users to ask questions about any YouTube video using its transcript. It uses a Retrieval-Augmented Generation (RAG) pipeline to retrieve relevant transcript chunks and generate accurate answers based only on the video content.
+
+### 🎥 Features
+
+* 📺 Transcript Retrieval
+  * Fetches YouTube video transcripts automatically
+  * Supports English captions
+  * Uses the transcript as the knowledge source
+
+* 🔍 Context-Based Question Answering
+  * Splits transcripts into meaningful chunks
+  * Generates embeddings using Gemini Embedding Model
+  * Stores transcript embeddings in Chroma Vector Database
+  * Retrieves the most relevant context before answering
+
+* 🤖 AI-Powered Responses
+  * Answers only from the provided transcript
+  * Avoids using external knowledge
+  * Returns an appropriate message if the answer is unavailable
+
+* 💻 Interactive Streamlit Interface
+  * Enter a YouTube Video ID
+  * Ask questions in natural language
+  * Get transcript-based answers instantly
+
+
 # 🚀 Upcoming Agents
 
 - 🛣️ Roadmap Agent
@@ -105,10 +133,13 @@ The Quiz Agent generates personalized quizzes based on the user's learning goal,
 |----------|------------|
 | Language | Python |
 | Framework | LangChain |
-| LLM | Google Gemini 2.5 Flash |
+| LLM | Google Gemini 2.5 Flash, Groq |
 | UI | Streamlit |
-| Prompting | ChatPromptTemplate |
+| Prompting | ChatPromptTemplate / PromptTemplate |
 | Output Parser | StrOutputParser |
+| Vector Database | ChromaDB |
+| Embedding Model | Gemini Embedding |
+| Data Source | YouTube Transcript API |
 | Environment | python-dotenv |
 
 ---
@@ -125,7 +156,8 @@ AI_Learning_Assistant/
 |
 ├── Agents/
 │   ├── teacher_agent.py
-│   └── quiz_agent.py
+│   ├── quiz_agent.py
+│   └── Youtube_agent.py
 |
 ├── Prompt/
 |   └── Teacher_prompt/ 
@@ -135,11 +167,13 @@ AI_Learning_Assistant/
 │     ├── interview_prompt.py
 │     ├── compare_prompt.py
 │     └── coding_prompt.py
-│   └── Quiz_prompt.py
+│   ├── Quiz_prompt.py
+|   ├── youtube_prompt.py
 |   └── prompt_router.py
 |
 ├── llms/
-│   └── gemini.py
+│   ├── gemini.py
+│   └── groq.py
 │
 ├── .env
 ├── requirements.txt
@@ -207,33 +241,38 @@ streamlit run app.py
 # 🧩 Current Workflow
 
 ```text
-                            User
-                             │
-                             ▼
-                        Streamlit UI
-                 ┌─────────────┼─────────────┐
-                 ▼                           ▼
-              Teacher Agent              Quiz_Agent
-                    │                         │
-                    ▼                         ▼ 
-             Prompt Router               Gemini 2.5 Flash
-                    │                           │
-      ┌─────────────┼─────────────┐             ▼
-      ▼             ▼             ▼      Personalized Response
- Learning      Interview      Notes
-      │
-      ▼
-  Gemini 2.5 Flash
-      │
-      ▼
- Personalized Response
-```                          
-                                            
-                                                 
-                                         
-                   
-
----
+                              User
+                               │
+                               ▼
+                          Streamlit UI
+         ┌─────────────────────┼─────────────────────┐
+         ▼                     ▼                     ▼
+    Teacher Agent         Quiz Agent      YouTube Chatbot Agent
+         │                     │                     │
+         ▼                     ▼                     ▼
+    Prompt Router      Gemini 2.5 Flash   Transcript Retrieval
+         │                                           │
+ ┌───────┼────────┐                                  ▼
+ ▼       ▼        ▼                           Text Splitting
+Learning Interview Notes                           │
+         │                                          ▼
+         ▼                                  Gemini Embeddings
+ Gemini 2.5 Flash                                 │
+         │                                         ▼
+         ▼                                    ChromaDB
+Personalized Response                             │
+                                                  ▼
+                                             Retriever
+                                                  │
+                                                  ▼
+                                               Prompt
+                                                  │
+                                                  ▼
+                                               Groq LLM
+                                                  │
+                                                  ▼
+                                        Transcript-Based Answer
+```
 
 # 📖 Example
 
@@ -268,6 +307,7 @@ Question  : Explain LangGraph.
 - [x] Prompt Router
 - [x] Multiple Learning Modes
 - [x] Quiz Agent
+- [x] YouTube Chatbot Agent
 - [ ] Roadmap Generator
 - [ ] Resume Review Agent
 - [ ] Study Planner
@@ -314,3 +354,23 @@ https://github.com/goluraj120/Agentic_AI
 
 https://www.linkedin.com/in/aman-raj-600904280
 
+
+
+---
+
+## 🎥 YouTube Chatbot Example
+
+### Input
+
+```text
+Video ID : 2beOYY4S0B8
+
+Question : What is Kernel in Operating System?
+```
+
+### Output
+
+- Retrieves the relevant transcript
+- Searches the most relevant context
+- Generates an answer based only on the transcript
+- Returns an appropriate response if the information is unavailable
