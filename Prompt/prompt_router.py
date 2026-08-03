@@ -5,6 +5,7 @@ from Prompt.Teacher_prompt.notes_prompt import notes_prompt
 from Prompt.Teacher_prompt.compare_prompt import compare_prompt
 from Prompt.quiz_prompt import quiz_prompt
 from Prompt.youtube_prompt import youtube_prompt 
+from Prompt.planner_prompt import planner_prompt
 
 
 PROMPTS = {
@@ -15,5 +16,7 @@ PROMPTS = {
     "coding": coding_prompt,
     "quiz": quiz_prompt,
     "youtube": youtube_prompt,
+    "planner": planner_prompt,
     
 }
+
