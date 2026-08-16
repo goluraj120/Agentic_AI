@@ -1,145 +1,131 @@
 # 🎓 AI Learning Assistant
 
-An AI-powered multi-agent learning platform built with **LangChain**, **Google Gemini**,**groq** and **Streamlit** to provide personalized educational assistance. The project helps students learn technical concepts, prepare for interviews, generate notes, compare technologies, solve coding problems, and much more.
+<p align="center">
 
-> 🚧 This project is actively under development. New AI agents and learning features are being added continuously.
+![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python)
+![LangChain](https://img.shields.io/badge/LangChain-Agentic%20AI-green)
+![Gemini](https://img.shields.io/badge/Google-Gemini-red)
+![Groq](https://img.shields.io/badge/Groq-LLM-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
+</p>
+
+An AI-powered **Multi-Agent Learning Platform** built with **LangChain**, **Google Gemini**, **Groq**, and **Streamlit**. The project helps students learn technical concepts, generate quizzes, create study plans, build ATS-friendly resumes, and chat with YouTube videos using AI.
 
 ---
 
 # ✨ Features
 
-## ✅ Teacher Agent (Completed)
-
-The Teacher Agent provides personalized learning based on the user's goal, knowledge level, preferred language, and learning mode.
-
-### 📚 Supported Learning Modes
-
-- 📘 Learning Mode
-  - Beginner to advanced explanations
-  - Step-by-step teaching
-  - Real-world examples
-
-- 📝 Notes Mode
-  - Short and structured notes
-  - Revision-friendly content
-  - Key points and summaries
-
-- 💼 Interview Mode
-  - Interview-oriented explanations
-  - Frequently asked interview questions
-  - Tips and best practices
-
-- ⚖️ Compare Mode
-  - Compare two technologies or concepts
-  - Advantages & disadvantages
-  - Use cases
-  - Feature comparison
-
-- 💻 Coding Mode
-  - Code generation
-  - Code explanation
-  - Debugging assistance
-  - Best practices
+- 📚 Teacher Agent
+- 📝 Quiz Agent
+- 📅 Planner Agent
+- 📄 Resume Builder Agent
+- 🎥 YouTube Chatbot Agent
+- 🤖 Multi-Agent Architecture
+- 🎯 Personalized Learning
+- 📋 Structured Outputs using Pydantic
+- 💻 Interactive Streamlit UI
 
 ---
 
-## ✅ Quiz Agent (Completed)
+# 🤖 Teacher Agent
 
-The Quiz Agent generates personalized quizzes based on the user's learning goal, topic, knowledge level, and preferred language. It helps users evaluate their understanding through interactive multiple-choice questions.
+The Teacher Agent provides personalized learning experiences based on the user's learning goal, level, language, and selected mode.
 
-### 📝 Features
+### Features
 
-* 🎯 Personalized Quiz Generation
-
-  * Topic-based quizzes
-  * Goal-oriented questions
-  * Difficulty-based question selection
-  * Language support
-
-* ❓ Multiple Choice Questions (MCQs)
-
-  * 10 automatically generated questions
-  * Four options (A, B, C, D)
-  * One correct answer
-  * Concept-based questions
-
-* 📊 Quiz Evaluation
-
-  * Automatic score calculation
-  * Marks for each question
-  * Final score summary
-  * Performance feedback
-
-* 💡 Answer Explanation
-
-  * Correct answer after submission
-  * Short explanation for every question
-  * Helps reinforce learning
-
-* 🧠 Structured Output
-
-  * Pydantic schema validation
-  * Reliable structured quiz generation
-  * Consistent output format
-  * Easy integration with Streamlit UI
+- Learning Mode
+- Notes Mode
+- Interview Mode
+- Compare Mode
+- Coding Mode
+- Step-by-step explanations
+- Real-world examples
+- Interview preparation
+- Code generation and debugging
 
 ---
 
+# 📝 Quiz Agent
 
-## ✅ YouTube Chatbot Agent (Completed)
+Generates personalized quizzes to evaluate learning.
 
-The YouTube Chatbot Agent allows users to ask questions about any YouTube video using its transcript. It uses a Retrieval-Augmented Generation (RAG) pipeline to retrieve relevant transcript chunks and generate accurate answers based only on the video content.
+### Features
 
-### 🎥 Features
-
-* 📺 Transcript Retrieval
-  * Fetches YouTube video transcripts automatically
-  * Supports English captions
-  * Uses the transcript as the knowledge source
-
-* 🔍 Context-Based Question Answering
-  * Splits transcripts into meaningful chunks
-  * Generates embeddings using Gemini Embedding Model
-  * Stores transcript embeddings in Chroma Vector Database
-  * Retrieves the most relevant context before answering
-
-* 🤖 AI-Powered Responses
-  * Answers only from the provided transcript
-  * Avoids using external knowledge
-  * Returns an appropriate message if the answer is unavailable
-
-* 💻 Interactive Streamlit Interface
-  * Enter a YouTube Video ID
-  * Ask questions in natural language
-  * Get transcript-based answers instantly
-
-
-# 🚀 Upcoming Agents
-
-- 🛣️ Roadmap Agent
-- 📄 Resume Review Agent
-- 📅 Study Planner Agent
-- 💬 Mock Interview Agent
-- 📚 PDF Notes Generator
-- 🧠 Progress Tracker
-- 📂 RAG-based Document Assistant
-- 🎤 Voice Learning Assistant
+- Topic-based MCQs
+- Difficulty Levels
+- Automatic Evaluation
+- Score Calculation
+- Answer Explanation
+- Structured Quiz Schema
+- Pydantic Validation
 
 ---
 
-# 🛠️ Tech Stack
+# 📅 Planner Agent
+
+Creates personalized study plans based on the user's goals.
+
+### Features
+
+- Weekly Study Plan
+- Learning Objectives
+- Revision Schedule
+- Daily Tasks
+- Quiz Recommendations
+- Time Allocation
+- Goal-Based Roadmaps
+
+---
+
+# 📄 Resume Builder Agent
+
+An AI-powered ATS-friendly Resume Assistant.
+
+### Features
+
+- ATS-Friendly Resume
+- Professional Summary
+- AI Skill Suggestions
+- Resume Templates
+  - Fresher
+  - AI Engineer
+  - Software Engineer
+  - Data Scientist
+- Project Enhancement
+- Action Verb Optimization
+- Structured Resume Schema
+
+---
+
+# 🎥 YouTube Chatbot Agent
+
+Allows users to ask questions from any YouTube video's transcript using RAG.
+
+### Features
+
+- Transcript Retrieval
+- Gemini Embeddings
+- ChromaDB Vector Store
+- Context Retrieval
+- Transcript-Based Answers
+- Natural Language Questions
+
+---
+
+# 🛠 Tech Stack
 
 | Category | Technology |
 |----------|------------|
 | Language | Python |
 | Framework | LangChain |
-| LLM | Google Gemini 2.5 Flash, Groq |
+| LLM | Google Gemini, Groq |
 | UI | Streamlit |
-| Prompting | ChatPromptTemplate / PromptTemplate |
-| Output Parser | StrOutputParser |
-| Vector Database | ChromaDB |
-| Embedding Model | Gemini Embedding |
-| Data Source | YouTube Transcript API |
+| Vector DB | ChromaDB |
+| Embeddings | Gemini Embeddings |
+| Prompting | ChatPromptTemplate |
+| Validation | Pydantic |
 | Environment | python-dotenv |
 
 ---
@@ -150,33 +136,43 @@ The YouTube Chatbot Agent allows users to ask questions about any YouTube video 
 AI_Learning_Assistant/
 │
 ├── app.py
-├── UI/
-│   ├──Quiz_ui.py
-|   └──Teacher_ui.py
-|
+│
 ├── Agents/
 │   ├── teacher_agent.py
 │   ├── quiz_agent.py
-│   └── Youtube_agent.py
-|
-├── Prompt/
-|   └── Teacher_prompt/ 
-│     ├── prompt_router.py
-│     ├── learning_prompt.py
-│     ├── notes_prompt.py
-│     ├── interview_prompt.py
-│     ├── compare_prompt.py
-│     └── coding_prompt.py
-│   ├── Quiz_prompt.py
-|   ├── youtube_prompt.py
-|   └── prompt_router.py
-|
-├── llms/
-│   ├── gemini.py
-│   └── groq.py
+│   ├── planner_agent.py
+│   ├── resume_agent.py
+│   └── youtube_agent.py
 │
-├── .env
+├── Prompt/
+│   ├── Teacher_prompt/
+│   ├── quiz_prompt.py
+│   ├── planner_prompt.py
+│   ├── resume_prompt.py
+│   ├── youtube_prompt.py
+│   └── prompt_router.py
+│
+├── Schema/
+│   ├── quiz_schema.py
+│   ├── planner_schema.py
+│   └── resume_schema.py
+│
+├── Templates/
+│   ├── fresher.py
+│   ├── ai_engineer.py
+│   ├── software_engineer.py
+│   └── data_scientist.py
+│
+├── UI/
+│   ├── Teacher_UI.py
+│   ├── Quiz_UI.py
+│   ├── planner_UI.py
+│   ├── resume_UI.py
+│   └── Youtube_UI.py
+│
+├── llms/
 ├── requirements.txt
+├── .env
 └── README.md
 ```
 
@@ -184,7 +180,7 @@ AI_Learning_Assistant/
 
 # ⚙️ Installation
 
-## Clone the Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/goluraj120/Agentic_AI.git
@@ -192,45 +188,39 @@ git clone https://github.com/goluraj120/Agentic_AI.git
 cd Agentic_AI
 ```
 
-## Create Virtual Environment
-
-### Windows
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
+```
 
+### Activate
+
+Windows
+
+```bash
 venv\Scripts\activate
 ```
 
-### Linux / macOS
+Linux / macOS
 
 ```bash
-python3 -m venv venv
-
 source venv/bin/activate
 ```
 
----
-
-## Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Configure Environment Variables
-
-Create a `.env` file in the project root.
+### Add API Key
 
 ```env
 GOOGLE_API_KEY=YOUR_API_KEY
 ```
 
----
-
-## Run the Application
+### Run
 
 ```bash
 streamlit run app.py
@@ -238,139 +228,132 @@ streamlit run app.py
 
 ---
 
-# 🧩 Current Workflow
+# 🚀 Usage
+
+1. Launch Streamlit.
+2. Select an AI Agent.
+3. Enter your inputs.
+4. Generate AI responses.
+5. Learn, practice, plan, or build your resume.
+
+---
+
+# 🏗 Architecture
 
 ```text
-                              User
-                               │
-                               ▼
-                          Streamlit UI
-         ┌─────────────────────┼─────────────────────┐
-         ▼                     ▼                     ▼
-    Teacher Agent         Quiz Agent      YouTube Chatbot Agent
-         │                     │                     │
-         ▼                     ▼                     ▼
-    Prompt Router      Gemini 2.5 Flash   Transcript Retrieval
-         │                                           │
- ┌───────┼────────┐                                  ▼
- ▼       ▼        ▼                           Text Splitting
-Learning Interview Notes                           │
-         │                                          ▼
-         ▼                                  Gemini Embeddings
- Gemini 2.5 Flash                                 │
-         │                                         ▼
-         ▼                                    ChromaDB
-Personalized Response                             │
-                                                  ▼
-                                             Retriever
-                                                  │
-                                                  ▼
-                                               Prompt
-                                                  │
-                                                  ▼
-                                               Groq LLM
-                                                  │
-                                                  ▼
-                                        Transcript-Based Answer
+                    User
+                      │
+                      ▼
+                 Streamlit UI
+                      │
+      ┌───────────────┼───────────────┐
+      ▼               ▼               ▼
+ Teacher Agent   Quiz Agent     Planner Agent
+      │               │               │
+      ├───────────────┼───────────────┤
+                      ▼
+             Resume Builder Agent
+                      │
+                      ▼
+            YouTube Chatbot Agent
+                      │
+                      ▼
+             Google Gemini / Groq
 ```
 
-# 📖 Example
+---
 
-### Input
+# 🔄 Workflow
 
 ```text
-Goal      : Become AI Engineer
-
-Mode      : Learning
-
-Level     : Beginner
-
-Language  : English
-
-Question  : Explain LangGraph.
+User
+ │
+ ▼
+Streamlit UI
+ │
+ ▼
+Selected Agent
+ │
+ ▼
+Prompt
+ │
+ ▼
+Gemini / Groq
+ │
+ ▼
+Pydantic Parser
+ │
+ ▼
+Structured Response
+ │
+ ▼
+Streamlit Output
 ```
 
-### Output
+---
 
-- Concept Explanation
-- Step-by-Step Breakdown
-- Real-world Example
-- Interview Questions
-- Practice Questions
-- Summary
+# 📸 Screenshots
+
+Add screenshots here.
+
+```text
+screenshots/
+├── home.png
+├── teacher.png
+├── quiz.png
+├── planner.png
+├── resume.png
+└── youtube.png
+```
 
 ---
 
-# 🎯 Future Roadmap
+# 🗺 Future Roadmap
 
-- [x] Teacher Agent
-- [x] Prompt Router
-- [x] Multiple Learning Modes
-- [x] Quiz Agent
-- [x] YouTube Chatbot Agent
-- [ ] Roadmap Generator
-- [ ] Resume Review Agent
-- [ ] Study Planner
-- [ ] Mock Interview
-- [ ] RAG Integration
-- [ ] Vector Database
-- [ ] Memory Support
-- [ ] Voice Assistant
-- [ ] PDF Export
-- [ ] User Authentication
-- [ ] Chat History
+- ✅ Teacher Agent
+- ✅ Quiz Agent
+- ✅ Planner Agent
+- ✅ Resume Builder Agent
+- ✅ YouTube Chatbot Agent
+- ⏳ Mock Interview Agent
+- ⏳ Cover Letter Generator
+- ⏳ PDF Resume Export
+- ⏳ Progress Tracker
+- ⏳ Voice Assistant
+- ⏳ Authentication
 
 ---
 
-# 🎯 Learning Objectives
+# 🤝 Contributing
 
-This project is being developed to strengthen practical skills in:
+Contributions are welcome!
 
-- Prompt Engineering
-- LangChain
-- Multi-Agent AI Systems
-- LLM Application Development
-- AI Product Design
-- Streamlit
-- Python
-- Agentic AI
+1. Fork the repository.
+2. Create a new branch.
+3. Commit your changes.
+4. Push the branch.
+5. Open a Pull Request.
 
 ---
-
 
 # 👨‍💻 Author
 
 **Aman Raj**
 
-B.Tech (Artificial Intelligence & Data Science)
+**B.Tech (AI & DS)**
 
 IIMT College of Engineering, Greater Noida
 
-### GitHub
+GitHub: https://github.com/goluraj120/Agentic_AI
 
-https://github.com/goluraj120/Agentic_AI
-
-### LinkedIn
-
-https://www.linkedin.com/in/aman-raj-600904280
-
-
+LinkedIn: https://www.linkedin.com/in/aman-raj-600904280
 
 ---
 
-## 🎥 YouTube Chatbot Example
+# 📜 License
 
-### Input
+This project is licensed under the **MIT License**.
 
-```text
-Video ID : 2beOYY4S0B8
+---
 
-Question : What is Kernel in Operating System?
-```
-
-### Output
-
-- Retrieves the relevant transcript
-- Searches the most relevant context
-- Generates an answer based only on the transcript
-- Returns an appropriate response if the information is unavailable
+⭐ **If you found this project helpful, don't forget to star the repository!**
